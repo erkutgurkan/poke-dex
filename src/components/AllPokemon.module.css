@@ -1,0 +1,20 @@
+.allPokemonWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 1.74em;
+}
+
+.allPokemonWrapper::after {
+  content: "";
+  flex: auto;
+}
+.loadingWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+  gap: 10px;
+}

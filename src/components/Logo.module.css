@@ -1,0 +1,18 @@
+.logoMainWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  width: 30em;
+  height: 140px;
+  align-items: center;
+  font-size: 0.7em;
+}
+
+.logo {
+  width: 90%;
+  height: 90%;
+}

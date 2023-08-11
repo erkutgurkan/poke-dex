@@ -1,0 +1,106 @@
+.filterWrapper {
+  padding-top: 2.43em;
+}
+
+.filters {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 65%;
+  gap: 20px;
+}
+
+.typeFilter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.65em;
+  height: 1.39em;
+  padding-right: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.filtersWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+:global(.normal) {
+  background-color: #d9d9d9;
+}
+
+:global(.grass) {
+  background-color: #47ab57;
+}
+:global(.fire) {
+  background-color: #fd7d24;
+}
+:global(.water) {
+  background-color: #4592c4;
+}
+:global(.bug) {
+  background-color: #719f3f;
+}
+:global(.electric) {
+  background-color: #eed535;
+}
+:global(.rock) {
+  background-color: #a38c21;
+}
+:global(.ghost) {
+  background-color: #7b62a3;
+}
+:global(.poison) {
+  background-color: #b97fc9;
+}
+:global(.psychic) {
+  background-color: #f366b9;
+}
+:global(.fighting) {
+  background-color: #d56723;
+}
+:global(.ground) {
+  background-color: #ab9842;
+}
+:global(.dragon) {
+  background-color: #f06d56;
+}
+:global(.ice) {
+  background-color: #00aeff;
+}
+:global(.steel) {
+  background-color: #614e5e;
+}
+:global(.dark) {
+  background-color: #161514;
+}
+:global(.fairy) {
+  background-color: #bbff00;
+}
+:global(.flying) {
+  background-color: #e25959;
+}
+.typeReset {
+  background-color: #000;
+}
+
+.select {
+  width: 11.1em;
+  height: 2em;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  background-color: #313131;
+  color: #fff;
+  font-size: 1.7em;
+}
+
+.insideSelect {
+  padding: 8px 12px;
+  line-height: 1.42857143;
+  border: 1px solid #cccccc;
+  font-family: inherit;
+}

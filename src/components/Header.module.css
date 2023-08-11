@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #313131;
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  padding-right: 32.64em;
+  padding-left: 32.64em;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.searchInput {
+  width: 8.5em;
+  height: 1.6em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 2em;
+}
+
+.insideInput {
+  padding: 8px 12px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  font-family: "VT323", monospace;
+}
+
+.inputTextDescription {
+  color: #ffffff;
+  width: 17.85em;
+}

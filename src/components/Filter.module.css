@@ -104,3 +104,43 @@
   border: 1px solid #cccccc;
   font-family: inherit;
 }
+
+@media (max-width: 800px) {
+  .filtersWrapper {
+    flex-direction: column;
+    gap: 30px;
+
+    align-items: center;
+  }
+  .filterWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .filters {
+    justify-content: center;
+    width: 120%;
+  }
+  .filterText {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 670px) {
+  .filters {
+    justify-content: center;
+    width: 125%;
+  }
+}
+
+@media (max-width: 400px) {
+  .filterText {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .filterText {
+    font-size: 25px;
+  }
+}

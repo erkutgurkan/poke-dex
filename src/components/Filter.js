@@ -7,7 +7,7 @@ function Filter() {
 
   return (
     <div className={styles.filterWrapper}>
-      <h1>Filter by type:</h1>
+      <h1 className={styles.filterText}>Filter by type:</h1>
       <div className={styles.filtersWrapper}>
         <ul className={styles.filters}>
           <FilterList

@@ -28,10 +28,6 @@
   font-size: 1.6em;
 }
 
-/* .pokeName::first-letter {
-  text-transform: uppercase;
-} */
-
 .pokeStyle {
   width: 4.65em;
   height: 1.39em;
@@ -46,43 +42,33 @@
   text-transform: capitalize;
 }
 
-/* :global(.normal) {
-  background-color: #d9d9d9;
+@media (max-width: 1000px) {
+  .pokeWrapper {
+    flex-basis: calc(28% - 40px);
+  }
 }
 
-:global(.grass) {
-  background-color: #47ab57;
+@media (max-width: 800px) {
+  .pokeWrapper {
+    flex-basis: calc(37% - 40px);
+  }
 }
-:global(.fire) {
-  background-color: #fd7d24;
+
+@media (max-width: 600px) {
+  .pokeWrapper {
+    flex-basis: calc(50% - 20px);
+  }
 }
-.water {
-  background-color: #4592c4;
+
+@media (max-width: 480px) {
+  .pokeWrapper {
+    flex-basis: calc(100% - 0px);
+  }
 }
-.bug {
-  background-color: #719f3f;
+
+@media (max-width: 360px) {
+  .pokeWrapper {
+    flex-basis: calc(100% - 0px);
+    width: 25%;
+  }
 }
-.electric {
-  background-color: #eed535;
-}
-.rock {
-  background-color: #a38c21;
-}
-.ghost {
-  background-color: #7b62a3;
-}
-.poison {
-  background-color: #b97fc9;
-}
-.psychic {
-  background-color: #f366b9;
-}
-.fighting {
-  background-color: #d56723;
-}
-.ground {
-  background-color: #ab9842;
-}
-.dragon {
-  background-color: #f06d56;
-} */

@@ -13,6 +13,13 @@
 }
 
 .logo {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 80%;
+}
+
+@media (max-width: 375px) {
+  .logo {
+    width: 100%;
+    height: 50%;
+  }
 }

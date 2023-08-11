@@ -5,11 +5,16 @@
   background-color: #313131;
   padding-top: 2em;
   padding-bottom: 2em;
-
   padding-right: 32.64em;
   padding-left: 32.64em;
   align-items: center;
   margin-top: 3em;
+}
+
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .searchInput {
@@ -34,4 +39,8 @@
 .inputTextDescription {
   color: #ffffff;
   width: 17.85em;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
 }

@@ -1,18 +1,17 @@
-import { FloatButton } from "antd";
-import AllPokemon from "./components/AllPokemon";
-import Filter from "./components/Filter";
-import Header from "./components/Header";
-import Logo from "./components/Logo";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import DetailedPoke from "./pages/DetailedPoke";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
-    <div className="container">
-      <Logo />
-      <Header />
-      <Filter />
-      <AllPokemon />
-      <FloatButton.BackTop visibilityHeight={1080} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+        <Route path="detailed/:pokemonName" element={<DetailedPoke />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

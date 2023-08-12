@@ -13,6 +13,7 @@ body {
   color: #333;
   line-height: 1.6;
   letter-spacing: 0.8px;
+  background-color: #fdffcd;
 }
 
 .container {
@@ -24,4 +25,11 @@ body {
   padding-bottom: 3em;
   padding-top: 3em;
   padding-left: 6em;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
 }

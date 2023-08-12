@@ -1,0 +1,8 @@
+.detailedPokeWrapper {
+  color: #ffffff;
+  background-color: #333;
+  font-size: 3.162em;
+  font-family: "VT323", monospace;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}

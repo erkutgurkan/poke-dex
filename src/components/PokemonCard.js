@@ -1,3 +1,4 @@
+import { Link, useParams } from "react-router-dom";
 import styles from "./PokemonCard.module.css";
 
 function PokemonCard({ pokeImage, pokeId, pokeExp, pokeName, pokeType }) {
@@ -10,9 +11,11 @@ function PokemonCard({ pokeImage, pokeId, pokeExp, pokeName, pokeType }) {
 
   return (
     <div className={styles.pokeWrapper}>
-      <div className={styles.imgWrapper}>
-        <img className={styles.image} src={pokeImage} alt="Pokemon" />
-      </div>
+      <Link to={`/detailed/${pokeName}`}>
+        <div className={styles.imgWrapper}>
+          <img className={styles.image} src={pokeImage} alt="Pokemon" />
+        </div>
+      </Link>
       <div className={styles.pokemonNumberExp}>
         <span>#0{pokeId}</span>
         <span>EXP: {pokeExp}</span>

@@ -4,17 +4,43 @@
 }
 
 .imgWrapper {
-  background-color: #d9d9d9;
+  background-color: #ff894c;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: relative;
+}
+
+.imgWrapper {
+  transition: all 0.2s ease-in-out;
+}
+
+.imgWrapper:hover {
+  transform: scale(1.1);
 }
 
 .image {
   width: 100%;
   height: 100%;
+}
+
+.icon {
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background-color: #333;
+  border-radius: 50%;
+  color: #ffffff;
+  border: 1px solid black;
 }
 
 .pokemonNumberExp {

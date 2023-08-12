@@ -10,10 +10,11 @@
   height: 140px;
   align-items: center;
   font-size: 0.7em;
+  gap: 10px;
 }
 
 .logo {
-  width: 100%;
+  width: 80%;
   height: 80%;
 }
 

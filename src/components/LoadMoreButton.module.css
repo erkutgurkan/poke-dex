@@ -1,0 +1,44 @@
+.loadMoreBtn {
+  background-color: #333;
+  border-radius: 10px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 6px 20px 6px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 12%;
+  font-family: inherit;
+  font-size: 1.5em;
+}
+
+.loadMoreBtn:hover {
+  opacity: 0.75;
+}
+
+.loadMoreBtn:active {
+  background-color: rgba(0, 0, 0, 10);
+}
+
+.btnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}

@@ -43,6 +43,7 @@ function reducer(state, action) {
         ...state,
         sortBy: action.payload,
       };
+
     default:
       throw new Error("Unknown action");
   }
@@ -99,11 +100,11 @@ function PokeProvider({ children }) {
     });
   }, [allPokemon, searchQuery, sortBy, selectedType]);
 
-  useEffect(() => {
-    async function fetchPokemon() {
+  const fetchPokemon = async () => {
+    try {
       dispatch({ type: "loading", payload: true });
 
-      const res = await fetch("https://pokeapi.co/api/v2/pokemon?&limit=1000");
+      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=500");
       const data = await res.json();
 
       function getPokemonObject(res) {
@@ -120,8 +121,12 @@ function PokeProvider({ children }) {
       }
 
       getPokemonObject(data.results);
+    } finally {
       dispatch({ type: "loading", payload: false });
     }
+  };
+
+  useEffect(() => {
     fetchPokemon();
   }, []);
 
@@ -136,6 +141,7 @@ function PokeProvider({ children }) {
         sortBy,
         sortedAndFilteredRecords,
         isLoading,
+        fetchPokemon,
       }}
     >
       {children}

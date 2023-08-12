@@ -5,17 +5,15 @@
   background-color: #313131;
   padding-top: 2em;
   padding-bottom: 2em;
-  /* padding-right: 32.64em;
-  padding-left: 32.64em; */
   align-items: center;
   margin-top: 3em;
-  width: 100%;
+  width: 90vw;
+  border-radius: 10px;
 }
 
 .mainWrapper {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .searchInput {

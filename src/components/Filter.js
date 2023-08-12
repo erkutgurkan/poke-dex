@@ -3,7 +3,8 @@ import FilterList from "./FilterList";
 import { usePoke } from "./context/PokeContext";
 
 function Filter() {
-  const { sortBy, handleTypeSelection, handleSelectSort } = usePoke();
+  const { sortBy, handleTypeSelection, handleSelectSort, selectedType } =
+    usePoke();
 
   return (
     <div className={styles.filterWrapper}>
@@ -11,115 +12,153 @@ function Filter() {
       <div className={styles.filtersWrapper}>
         <ul className={styles.filters}>
           <FilterList
-            className={`normal ${styles.typeFilter}`}
+            className={`normalCard ${styles.typeFilter} ${
+              selectedType === "normal" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("normal")}
           >
             Normal
           </FilterList>
           <FilterList
-            className={`grass ${styles.typeFilter}`}
+            className={`grassCard ${styles.typeFilter} ${
+              selectedType === "grass" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("grass")}
           >
             Grass
           </FilterList>
           <FilterList
-            className={`fire ${styles.typeFilter}`}
+            className={`fireCard ${styles.typeFilter} ${
+              selectedType === "fire" ? styles.selectedType : ""
+            } `}
             onClick={() => handleTypeSelection("fire")}
           >
             Fire
           </FilterList>
           <FilterList
-            className={`water ${styles.typeFilter}`}
+            className={`waterCard ${styles.typeFilter} ${
+              selectedType === "water" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("water")}
           >
             Water
           </FilterList>
           <FilterList
-            className={`bug ${styles.typeFilter}`}
+            className={`bugCard ${styles.typeFilter} ${
+              selectedType === "bug" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("bug")}
           >
             Bug
           </FilterList>
           <FilterList
-            className={`electric ${styles.typeFilter}`}
+            className={`electricCard ${styles.typeFilter} ${
+              selectedType === "electric" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("electric")}
           >
             Electric
           </FilterList>
           <FilterList
-            className={`rock ${styles.typeFilter}`}
+            className={`rockCard ${styles.typeFilter} ${
+              selectedType === "rock" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("rock")}
           >
             Rock
           </FilterList>
           <FilterList
-            className={`ghost ${styles.typeFilter}`}
+            className={`ghostCard ${styles.typeFilter} ${
+              selectedType === "ghost" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("ghost")}
           >
             Ghost
           </FilterList>
           <FilterList
-            className={`poison ${styles.typeFilter}`}
+            className={`poisonCard ${styles.typeFilter} ${
+              selectedType === "poison" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("poison")}
           >
             Poison
           </FilterList>
           <FilterList
-            className={`psychic ${styles.typeFilter}`}
+            className={`psychicCard ${styles.typeFilter} ${
+              selectedType === "psychic" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("psychic")}
           >
             Psychic
           </FilterList>
           <FilterList
-            className={`ground ${styles.typeFilter}`}
+            className={`groundCard ${styles.typeFilter} ${
+              selectedType === "ground" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("ground")}
           >
             Ground
           </FilterList>
           <FilterList
-            className={`dragon ${styles.typeFilter}`}
+            className={`dragonCard ${styles.typeFilter} ${
+              selectedType === "dragon" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("dragon")}
           >
             Dragon
           </FilterList>
           <FilterList
-            className={`fighting ${styles.typeFilter}`}
+            className={`fightingCard ${styles.typeFilter} ${
+              selectedType === "fighting" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("fighting")}
           >
             Fighting
           </FilterList>
           <FilterList
-            className={`ice ${styles.typeFilter}`}
+            className={`iceCard ${styles.typeFilter} ${
+              selectedType === "ice" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("ice")}
           >
             Ice
           </FilterList>
           <FilterList
-            className={`steel ${styles.typeFilter}`}
+            className={`steelCard ${styles.typeFilter} ${
+              selectedType === "steel" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("steel")}
           >
             Steel
           </FilterList>
           <FilterList
-            className={`dark ${styles.typeFilter}`}
+            className={`darkCard ${styles.typeFilter} ${
+              selectedType === "dark" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("dark")}
           >
             Dark
           </FilterList>
           <FilterList
-            className={`fairy ${styles.typeFilter}`}
+            className={`fairyCard ${styles.typeFilter} ${
+              selectedType === "fairy" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("fairy")}
           >
             Fairy
           </FilterList>
           <FilterList
-            className={`flying ${styles.typeFilter}`}
+            className={`flyingCard ${styles.typeFilter} ${
+              selectedType === "flying" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("flying")}
           >
             Flying
           </FilterList>
           <FilterList
-            className={`${styles.typeReset} ${styles.typeFilter}`}
+            className={`${styles.typeReset} ${styles.typeFilter} ${
+              selectedType === "reset" ? styles.selectedType : ""
+            }`}
             onClick={() => handleTypeSelection("")}
           >
             Reset

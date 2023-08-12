@@ -14,9 +14,10 @@ function SideContent() {
 
   return (
     <div className={styles.frontBackWrapper}>
-      <button onClick={() => navigate(-1)}>
-        <LeftCircleOutlined className={styles.sideContentBackIcon} />
-      </button>
+      <LeftCircleOutlined
+        className={styles.sideContentBackIcon}
+        onClick={() => navigate(-1)}
+      />
 
       <img
         className={styles.front}

@@ -1,14 +1,10 @@
 import styles from "./Logo.module.css";
-
+import logo from "../images/pokedex.png";
 function Logo() {
   return (
     <div className={styles.logoMainWrapper}>
       <div className={styles.logoWrapper}>
-        <img
-          className={styles.logo}
-          src="https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png"
-          alt="PokeDex Logo"
-        />
+        <img className={styles.logo} src={logo} alt="Pokedex Logo" />
       </div>
     </div>
   );

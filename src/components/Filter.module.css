@@ -1,5 +1,7 @@
 .filterWrapper {
   padding-top: 2.43em;
+  max-width: 90vw;
+  margin: auto;
 }
 
 .filters {
@@ -23,65 +25,82 @@
   border-radius: 10px;
   color: #ffffff;
 }
+.typeFilter:hover {
+  transform: translateY(-0.3rem);
+  transition: 0.2s;
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
+}
 
 .filtersWrapper {
   display: flex;
   justify-content: space-between;
 }
 
-:global(.normal) {
+.selectedType {
+  outline: 1px solid #333;
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.52);
+  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.52);
+  transform: translateY(-0.2rem);
+  transition: 0.1s;
+}
+
+:global(.normalCard) {
   background-color: #d9d9d9;
 }
 
-:global(.grass) {
+:global(.grassCard) {
   background-color: #47ab57;
 }
-:global(.fire) {
+:global(.fireCard) {
   background-color: #fd7d24;
 }
-:global(.water) {
+
+:global(.waterCard) {
   background-color: #4592c4;
 }
-:global(.bug) {
+:global(.bugCard) {
   background-color: #719f3f;
 }
-:global(.electric) {
+:global(.electricCard) {
   background-color: #eed535;
 }
-:global(.rock) {
+:global(.rockCard) {
   background-color: #a38c21;
 }
-:global(.ghost) {
+:global(.ghostCard) {
   background-color: #7b62a3;
 }
-:global(.poison) {
+:global(.poisonCard) {
   background-color: #b97fc9;
 }
-:global(.psychic) {
+:global(.psychicCard) {
   background-color: #f366b9;
 }
-:global(.fighting) {
+:global(.fightingCard) {
   background-color: #d56723;
 }
-:global(.ground) {
+:global(.groundCard) {
   background-color: #ab9842;
 }
-:global(.dragon) {
+:global(.dragonCard) {
   background-color: #f06d56;
 }
-:global(.ice) {
+:global(.iceCard) {
   background-color: #00aeff;
 }
-:global(.steel) {
+:global(.steelCard) {
   background-color: #614e5e;
 }
-:global(.dark) {
+:global(.darkCard) {
   background-color: #161514;
 }
-:global(.fairy) {
+:global(.fairyCard) {
   background-color: #bbff00;
 }
-:global(.flying) {
+:global(.flyingCard) {
   background-color: #e25959;
 }
 .typeReset {

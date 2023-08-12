@@ -42,6 +42,7 @@ function reducer(state, action) {
       return {
         ...state,
         sortBy: action.payload,
+        searchQuery: "",
       };
 
     default:
@@ -55,6 +56,9 @@ function PokeProvider({ children }) {
     dispatch,
   ] = useReducer(reducer, initialStates);
 
+  function handleTypeSelection(type) {
+    dispatch({ type: "selection", payload: type });
+  }
   function handleTypeSelection(type) {
     dispatch({ type: "selection", payload: type });
   }
@@ -104,7 +108,7 @@ function PokeProvider({ children }) {
     try {
       dispatch({ type: "loading", payload: true });
 
-      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=500");
+      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
       const data = await res.json();
 
       function getPokemonObject(res) {
@@ -142,6 +146,7 @@ function PokeProvider({ children }) {
         sortedAndFilteredRecords,
         isLoading,
         fetchPokemon,
+        selectedType,
       }}
     >
       {children}

@@ -10,7 +10,7 @@ function PokemonCard({ pokeImage, pokeId, pokeExp, pokeName, pokeType }) {
   const capitalizedPokeName = capitalizeFirstLetter(pokeName);
 
   return (
-    <div className={styles.pokeWrapper}>
+    <div className={`${styles.pokeWrapper} ${pokeType} ${pokeType}Bg`}>
       <Link to={`/detailed/${pokeName}`}>
         <div className={styles.imgWrapper}>
           <img className={styles.image} src={pokeImage} alt="Pokemon" />
@@ -21,23 +21,7 @@ function PokemonCard({ pokeImage, pokeId, pokeExp, pokeName, pokeType }) {
         <span>EXP: {pokeExp}</span>
       </div>
       <h3 className={styles.pokeName}>{capitalizedPokeName}</h3>
-      <h4
-        className={`type-filter  ${styles.pokeStyle} ${
-          pokeType === "fire" && "fire"
-        } ${pokeType === "grass" && "grass"} ${
-          pokeType === "normal" && "normal"
-        } ${pokeType === "water" && "water"} ${pokeType === "bug" && "bug"} ${
-          pokeType === "electric" && "electric"
-        } ${pokeType === "rock" && "rock"} ${pokeType === "ghost" && "ghost"} ${
-          pokeType === "poison" && "poison"
-        } ${pokeType === "psychic" && "psychic"} ${
-          pokeType === "ground" && "ground"
-        } ${pokeType === "dragon" && "dragon"} ${
-          pokeType === "fighting" && "fighting"
-        } ${pokeType === "dark" && "dark"} ${pokeType === "fairy" && "fairy"} ${
-          pokeType === "flying" && "flying"
-        } ${pokeType === "steel" && "steel"} ${pokeType === "ice" && "ice"}`}
-      >
+      <h4 className={`type-filter  ${styles.pokeStyle} ${pokeType}Card`}>
         {capitalizedPokeType}
       </h4>
     </div>

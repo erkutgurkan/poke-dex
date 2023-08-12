@@ -23,6 +23,7 @@ function AllPokemon() {
               pokeExp={pokemon.base_experience}
               pokeName={pokemon.name}
               pokeType={pokemon.types[0].type.name}
+              key={pokemon.id}
             />
           ))}
         </div>

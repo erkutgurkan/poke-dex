@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
+        <Route exact path="poke-dex" element={<HomePage />} />
         <Route path="detailed/:pokemonName" element={<DetailedPoke />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

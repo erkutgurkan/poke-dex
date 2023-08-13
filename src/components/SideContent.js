@@ -20,7 +20,9 @@ function SideContent() {
       />
 
       <img
-        className={styles.front}
+        className={`${styles.front} ${
+          !selectedPokemon.sprites.back_default ? styles.frontWrapper : ""
+        }`}
         src={selectedPokemon.sprites.front_default}
         alt={selectedPokemon.name}
       />

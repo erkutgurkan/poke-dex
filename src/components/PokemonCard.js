@@ -1,7 +1,10 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./PokemonCard.module.css";
+import { ThreeCircles } from "react-loader-spinner";
+import { usePoke } from "./context/PokeContext";
 
 function PokemonCard({ pokeImage, pokeId, pokeExp, pokeName, pokeType }) {
+  const { isLoading } = usePoke();
   function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
@@ -13,7 +16,16 @@ function PokemonCard({ pokeImage, pokeId, pokeExp, pokeName, pokeType }) {
     <div className={`${styles.pokeWrapper} ${pokeType} ${pokeType}Bg`}>
       <Link to={`/detailed/${pokeName}`}>
         <div className={styles.imgWrapper}>
-          <img className={styles.image} src={pokeImage} alt="Pokemon" />
+          {isLoading ? (
+            <ThreeCircles
+              height={70}
+              width={70}
+              wrapperClass="loadingImg"
+              color="#333"
+            />
+          ) : (
+            <img className={styles.image} src={pokeImage} alt="Pokemon" />
+          )}
         </div>
       </Link>
       <div className={styles.pokemonNumberExp}>

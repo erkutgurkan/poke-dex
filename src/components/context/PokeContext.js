@@ -59,9 +59,6 @@ function PokeProvider({ children }) {
   function handleTypeSelection(type) {
     dispatch({ type: "selection", payload: type });
   }
-  function handleTypeSelection(type) {
-    dispatch({ type: "selection", payload: type });
-  }
 
   function handleSearch(e) {
     dispatch({ type: "searching", payload: e.target.value });

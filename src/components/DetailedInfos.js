@@ -11,7 +11,7 @@ function DetailedInfos() {
 
   return (
     <div className={styles.detailedPokeWrapper}>
-      <h4>ID: #00{selectedPokemon.id}</h4>
+      <h4>ID: #0{selectedPokemon.id}</h4>
       <h4>Name: {selectedPokemon.name}</h4>
       <h4>
         Types: {selectedPokemon.types[0].type.name}{" "}

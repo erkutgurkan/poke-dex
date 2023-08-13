@@ -105,7 +105,7 @@ function PokeProvider({ children }) {
     try {
       dispatch({ type: "loading", payload: true });
 
-      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
+      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1118");
       const data = await res.json();
 
       function getPokemonObject(res) {

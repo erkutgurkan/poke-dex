@@ -26,6 +26,7 @@ function PokemonCard({
   pokeStatsAttack,
   pokeStatsDefense,
   pokeStatsSpeed,
+  pokeAnimated,
 }) {
   const [open, setOpen] = useState(false);
   const { isLoading } = usePoke();
@@ -116,16 +117,16 @@ function PokemonCard({
                 className={`${styles.drawerImage} ${
                   !pokeImageBack && styles.noBack
                 }`}
-                src={pokeImage}
+                src={pokeAnimated ? pokeAnimated : pokeImage}
                 alt="Pokemon"
               />
-              {pokeImageBack && (
+              {/* {pokeImageBack && (
                 <img
                   className={styles.drawerImage}
                   src={pokeImageBack}
                   alt=""
                 />
-              )}
+              )} */}
             </div>
           </div>
           <div className={`${styles.detailedInfoWrapper} ${pokeType}`}>

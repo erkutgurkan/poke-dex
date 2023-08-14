@@ -4,11 +4,12 @@
   padding: 10px;
   transition: all 0.2s ease-in-out;
   border-radius: 10px;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.52);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.52);
-  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.52);
+  box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
   position: relative;
   cursor: pointer;
+  border: 2px solid black;
 }
 
 .openingInfos {
@@ -22,9 +23,9 @@
 }
 .drawerBackAndFrontImages {
   border: 1px solid #333;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
   border-radius: 10px;
   margin-bottom: 2em;
   display: flex;
@@ -42,7 +43,7 @@
   -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.52);
   box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.52);
   background-color: beige;
-  border: 1px solid #333;
+  border: 2px solid black;
 }
 
 :global(.fire) {
@@ -215,9 +216,9 @@
 
 .detailedInfoWrapper {
   border: 1px solid #333;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.34);
   border-radius: 10px;
   padding: 10px;
 }
@@ -257,7 +258,7 @@
 }
 
 .pokeName {
-  font-size: 1.6em;
+  font-size: 1.38em;
   display: flex;
   align-items: center;
 }

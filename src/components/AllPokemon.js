@@ -5,7 +5,7 @@ import LoadingText from "./LoadingText";
 import { usePoke } from "./context/PokeContext";
 
 function AllPokemon() {
-  const { isLoading, sortedAndFilteredRecords } = usePoke();
+  const { isLoading, sortedAndFilteredPokemon, filteredPokemon } = usePoke();
 
   return (
     <div>
@@ -16,7 +16,7 @@ function AllPokemon() {
         </div>
       ) : (
         <div className={styles.allPokemonWrapper}>
-          {sortedAndFilteredRecords.map((pokemon) => (
+          {sortedAndFilteredPokemon.map((pokemon) => (
             <PokemonCard
               pokeImage={pokemon.sprites.front_default}
               pokeImageBack={pokemon.sprites.back_default}

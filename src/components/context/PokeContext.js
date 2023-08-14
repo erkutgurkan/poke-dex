@@ -68,7 +68,7 @@ function PokeProvider({ children }) {
     dispatch({ type: "sorting", payload: e.target.value });
   }
 
-  const sortedAndFilteredRecords = useMemo(() => {
+  const sortedAndFilteredPokemon = useMemo(() => {
     let filteredPokemon = allPokemon;
 
     if (searchQuery.length > 0) {
@@ -99,7 +99,7 @@ function PokeProvider({ children }) {
         return a.name.localeCompare(b.name);
       }
     });
-  }, [allPokemon, searchQuery, sortBy, selectedType]);
+  }, [allPokemon, searchQuery, selectedType, sortBy]);
 
   const fetchPokemon = async () => {
     try {
@@ -140,7 +140,7 @@ function PokeProvider({ children }) {
         searchQuery,
         handleSearch,
         sortBy,
-        sortedAndFilteredRecords,
+        sortedAndFilteredPokemon,
         isLoading,
         fetchPokemon,
         selectedType,

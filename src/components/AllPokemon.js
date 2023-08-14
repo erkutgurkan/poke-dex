@@ -35,6 +35,11 @@ function AllPokemon() {
               pokeStatsDefense={pokemon.stats[2].base_stat}
               pokeStatsSpeed={pokemon.stats[5].base_stat}
               key={pokemon.id}
+              pokeAnimated={
+                pokemon["sprites"]["versions"]["generation-v"]["black-white"][
+                  "animated"
+                ].front_default
+              }
             />
           ))}
         </div>

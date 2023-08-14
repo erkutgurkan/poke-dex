@@ -33,8 +33,9 @@
 }
 
 .drawerBackAndFrontImagesFlex {
-  display: flex;
   width: 100%;
+
+  margin: auto;
 }
 
 .pokeWrapper:hover {
@@ -206,8 +207,9 @@
 }
 
 .drawerImage {
-  width: 100%;
+  width: 50%;
   margin: auto;
+  display: flex;
 }
 
 .noBack {

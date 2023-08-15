@@ -5,7 +5,7 @@ import LoadingText from "./LoadingText";
 import { usePoke } from "./context/PokeContext";
 
 function AllPokemon() {
-  const { isLoading, sortedAndFilteredPokemon, filteredPokemon } = usePoke();
+  const { isLoading, filteredPokemon } = usePoke();
 
   return (
     <div>
@@ -16,7 +16,7 @@ function AllPokemon() {
         </div>
       ) : (
         <div className={styles.allPokemonWrapper}>
-          {sortedAndFilteredPokemon.map((pokemon) => (
+          {filteredPokemon.map((pokemon) => (
             <PokemonCard
               pokeImage={pokemon.sprites.front_default}
               pokeImageBack={pokemon.sprites.back_default}
@@ -24,16 +24,21 @@ function AllPokemon() {
               pokeExp={pokemon.base_experience}
               pokeName={pokemon.name}
               pokeType={pokemon.types[0].type.name}
-              pokeAbility={pokemon.abilities[0].ability.name}
+              pokeType2={pokemon.types.map((type) => type.type.name)}
+              pokeAbility={pokemon.abilities.map(
+                (ability) => ability.ability.name
+              )}
               pokeForms={pokemon.forms[0].name}
               pokeHeight={pokemon.height}
               pokeWeight={pokemon.weight}
-              pokeMoves={pokemon.moves[0].move.name}
+              pokeMoves={pokemon.moves.map((move) => move.move.name)}
               pokeOrder={pokemon.order}
               pokeStatsHp={pokemon.stats[0].base_stat}
               pokeStatsAttack={pokemon.stats[1].base_stat}
               pokeStatsDefense={pokemon.stats[2].base_stat}
               pokeStatsSpeed={pokemon.stats[5].base_stat}
+              pokeStatsSpecialAttack={pokemon.stats[3].base_stat}
+              pokeStatsSpecialDefense={pokemon.stats[4].base_stat}
               key={pokemon.id}
               pokeAnimated={
                 pokemon["sprites"]["versions"]["generation-v"]["black-white"][

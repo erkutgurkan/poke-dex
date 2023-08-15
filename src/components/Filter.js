@@ -169,10 +169,18 @@ function Filter() {
           onChange={handleSelectSort}
           value={sortBy}
         >
-          <option value="idAscending">By id ascending</option>
-          <option value="idDescending">By id descending</option>
-          <option value="expAscending">By base exp ascending</option>
-          <option value="expDescending">By base exp descending</option>
+          <option value="idAscending" className={styles.option}>
+            By id ascending
+          </option>
+          <option value="idDescending" className={styles.option}>
+            By id descending
+          </option>
+          <option value="expAscending" className={styles.option}>
+            By base exp ascending
+          </option>
+          <option value="expDescending" className={styles.option}>
+            By base exp descending
+          </option>
         </select>
       </div>
     </div>

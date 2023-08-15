@@ -26,11 +26,11 @@
   color: #ffffff;
 }
 .typeFilter:hover {
-  transform: translateY(-0.3rem);
+  transform: scale(1.1);
   transition: 0.2s;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 8px -6px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 10px 10px 8px -6px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 10px 8px -6px rgba(0, 0, 0, 0.43);
 }
 
 .filtersWrapper {
@@ -115,6 +115,12 @@
   background-color: #313131;
   color: #fff;
   font-size: 1.7em;
+}
+
+.option {
+  font-size: 20px;
+
+  font-family: "VT323", monospace;
 }
 
 .insideSelect {

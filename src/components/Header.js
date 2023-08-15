@@ -15,7 +15,7 @@ function Header() {
         />
         <div className={styles.textWrapper}>
           <p className={styles.inputTextDescription}>
-            Use this input to search for any pokemon. In an instant.
+            Use this input to search for any pokemon.
           </p>
         </div>
       </div>

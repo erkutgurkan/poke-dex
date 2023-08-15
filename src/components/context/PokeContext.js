@@ -1,5 +1,6 @@
 import {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -10,6 +11,7 @@ const PokeContext = createContext();
 
 const initialStates = {
   selectedType: "",
+  selectedType2: "",
   allPokemon: [],
   isLoading: false,
   searchQuery: "",
@@ -22,6 +24,7 @@ function reducer(state, action) {
       return {
         ...state,
         selectedType: action.payload,
+        sortBy: "idAscending",
       };
     case "fetchingPokemon":
       return {
@@ -56,56 +59,56 @@ function PokeProvider({ children }) {
     dispatch,
   ] = useReducer(reducer, initialStates);
 
-  function handleTypeSelection(type) {
+  const handleTypeSelection = useCallback((type) => {
     dispatch({ type: "selection", payload: type });
-  }
+  }, []);
 
-  function handleSearch(e) {
+  const handleSearch = useCallback((e) => {
     dispatch({ type: "searching", payload: e.target.value });
-  }
+  }, []);
 
-  function handleSelectSort(e) {
+  const handleSelectSort = useCallback((e) => {
     dispatch({ type: "sorting", payload: e.target.value });
+  }, []);
+
+  let filteredPokemon = allPokemon;
+
+  if (searchQuery.length > 0) {
+    filteredPokemon = filteredPokemon.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
   }
 
-  const sortedAndFilteredPokemon = useMemo(() => {
-    let filteredPokemon = allPokemon;
+  if (selectedType) {
+    filteredPokemon = filteredPokemon.filter(
+      (pokemon) =>
+        pokemon.types[0].type.name === selectedType ||
+        (pokemon.types[1] && pokemon.types[1].type.name === selectedType)
+    );
+  }
 
-    if (searchQuery.length > 0) {
-      filteredPokemon = filteredPokemon.filter((pokemon) =>
-        pokemon.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+  filteredPokemon.sort((a, b) => {
+    if (sortBy === "idAscending") {
+      return a.id - b.id;
     }
-
-    if (selectedType) {
-      filteredPokemon = filteredPokemon.filter(
-        (pokemon) => pokemon.types[0].type.name === selectedType
-      );
+    if (sortBy === "idDescending") {
+      return b.id - a.id;
     }
-
-    return filteredPokemon.sort((a, b) => {
-      if (sortBy === "idAscending") {
-        return a.id - b.id;
-      }
-      if (sortBy === "idDescending") {
-        return b.id - a.id;
-      }
-      if (sortBy === "expAscending") {
-        return a.base_experience - b.base_experience;
-      }
-      if (sortBy === "expDescending") {
-        return b.base_experience - a.base_experience;
-      } else {
-        return a.name.localeCompare(b.name);
-      }
-    });
-  }, [allPokemon, searchQuery, selectedType, sortBy]);
+    if (sortBy === "expAscending") {
+      return a.base_experience - b.base_experience;
+    }
+    if (sortBy === "expDescending") {
+      return b.base_experience - a.base_experience;
+    } else {
+      return a.name.localeCompare(b.name);
+    }
+  });
 
   const fetchPokemon = async () => {
     try {
       dispatch({ type: "loading", payload: true });
 
-      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1118");
+      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=500");
       const data = await res.json();
 
       function getPokemonObject(res) {
@@ -131,24 +134,32 @@ function PokeProvider({ children }) {
     fetchPokemon();
   }, []);
 
-  return (
-    <PokeContext.Provider
-      value={{
-        handleSelectSort,
-        handleTypeSelection,
-        allPokemon,
-        searchQuery,
-        handleSearch,
-        sortBy,
-        sortedAndFilteredPokemon,
-        isLoading,
-        fetchPokemon,
-        selectedType,
-      }}
-    >
-      {children}
-    </PokeContext.Provider>
-  );
+  const value = useMemo(() => {
+    return {
+      handleSelectSort,
+      handleTypeSelection,
+      allPokemon,
+      searchQuery,
+      handleSearch,
+      sortBy,
+      filteredPokemon,
+      isLoading,
+      fetchPokemon,
+      selectedType,
+    };
+  }, [
+    allPokemon,
+    filteredPokemon,
+    isLoading,
+    searchQuery,
+    selectedType,
+    sortBy,
+    handleSearch,
+    handleSelectSort,
+    handleTypeSelection,
+  ]);
+
+  return <PokeContext.Provider value={value}>{children}</PokeContext.Provider>;
 }
 
 function usePoke() {

@@ -10,6 +10,7 @@
   position: relative;
   cursor: pointer;
   border: 2px solid black;
+  position: relative;
 }
 
 .openingInfos {
@@ -199,6 +200,8 @@
   align-items: center;
   width: 100%;
   position: relative;
+  margin-bottom: 10px;
+  margin-top: 14px;
 }
 
 .image {
@@ -207,9 +210,14 @@
 }
 
 .drawerImage {
-  width: 50%;
+  width: 150px;
   margin: auto;
   display: flex;
+}
+
+.typeWrapper {
+  display: flex;
+  gap: 10px;
 }
 
 .noBack {
@@ -253,10 +261,11 @@
 }
 
 .pokemonNumberExp {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1em;
-  margin-top: 0.5em;
+  font-size: 1.2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 4px;
 }
 
 .pokeName {

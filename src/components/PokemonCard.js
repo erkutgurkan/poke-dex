@@ -8,7 +8,10 @@ import {
   RiSwordFill,
   RiHeart3Fill,
   RiSpeedFill,
+  RiMeteorFill,
+  RiShieldFlashFill,
 } from "react-icons/ri";
+
 function PokemonCard({
   pokeImage,
   pokeId,
@@ -27,6 +30,9 @@ function PokemonCard({
   pokeStatsDefense,
   pokeStatsSpeed,
   pokeAnimated,
+  pokeStatsSpecialAttack,
+  pokeStatsSpecialDefense,
+  pokeType2,
 }) {
   const [open, setOpen] = useState(false);
   const { isLoading } = usePoke();
@@ -40,11 +46,18 @@ function PokemonCard({
   function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
-  const capitalizedPokeType = capitalizeFirstLetter(pokeType);
+  const capitalizedPokeType = pokeType2.map((type) =>
+    capitalizeFirstLetter(type)
+  );
   const capitalizedPokeName = capitalizeFirstLetter(pokeName);
-  const capitalizedPokeAbility = capitalizeFirstLetter(pokeAbility);
+  const capitalizedPokeAbility = pokeAbility.map((ability) =>
+    capitalizeFirstLetter(ability)
+  );
+  const capitalizedPokeMoves = pokeMoves.map((move) =>
+    capitalizeFirstLetter(move)
+  );
+  console.log(capitalizedPokeMoves);
   const capitalizedPokeForms = capitalizeFirstLetter(pokeForms);
-  const capitalizedPokeMoves = capitalizeFirstLetter(pokeMoves);
   return (
     <>
       <div className={`${styles.pokeWrapper} ${pokeType} ${pokeType}Bg `}>
@@ -68,28 +81,40 @@ function PokemonCard({
 
         <div className={styles.pokemonNumberExp} onClick={showDrawer}>
           <span>
-            {pokeId < 10 ? "#0" : "#"}
+            #{pokeId < 10 ? "0" : ""}
             {pokeId}
           </span>
-          <span>EXP: {!pokeExp ? "0" : pokeExp}</span>
         </div>
+
         <h3 className={styles.pokeName} onClick={showDrawer}>
           {capitalizedPokeName}
         </h3>
-        <h4
-          className={`type-filter  ${styles.pokeStyle} ${pokeType}Card`}
-          onClick={showDrawer}
-        >
-          {capitalizedPokeType}
-        </h4>
+        <div className={styles.typeWrapper}>
+          <h4
+            className={`type-filter  ${styles.pokeStyle} ${pokeType}Card`}
+            onClick={showDrawer}
+          >
+            {capitalizedPokeType[0]}
+          </h4>
+
+          {pokeType2[1] && (
+            <h4
+              className={`type-filter  ${styles.pokeStyle} ${pokeType2[1]}Card`}
+              onClick={showDrawer}
+            >
+              {capitalizedPokeType[1]}
+            </h4>
+          )}
+        </div>
 
         <Drawer
-          title="Detailed Pokemon Info"
+          title={`Detailed ${capitalizedPokeName} Info`}
           placement="right"
           onClose={onClose}
           open={open}
+          width={400}
           style={{
-            backgroundColor: "#e0ffcd",
+            backgroundColor: "#feffdf",
             fontFamily: "VT323, monospace",
             fontSize: "1.2em",
           }}
@@ -106,6 +131,14 @@ function PokemonCard({
               <h3 className={styles.pokeName}>
                 <RiShieldFill className={styles.drawerIcon} />
                 {pokeStatsDefense}
+              </h3>
+              <h3 className={styles.pokeName}>
+                <RiMeteorFill className={styles.drawerIcon} />
+                {pokeStatsSpecialAttack}
+              </h3>
+              <h3 className={styles.pokeName}>
+                <RiShieldFlashFill className={styles.drawerIcon} />
+                {pokeStatsSpecialDefense}
               </h3>
               <h3 className={styles.pokeName}>
                 <RiSpeedFill className={styles.drawerIcon} />
@@ -135,16 +168,18 @@ function PokemonCard({
               {pokeId}
             </h2>
             <h3 className={styles.pokeName}>Name: {capitalizedPokeName}</h3>
-            <h3 className={styles.pokeName}>Types: {capitalizedPokeType}</h3>
+            <h3 className={styles.pokeName}>
+              Types: {`${capitalizedPokeType.join(" & ")}`}
+            </h3>
             <h3 className={styles.pokeName}>Exp: {!pokeExp ? "0" : pokeExp}</h3>
             <h3 className={styles.pokeName}>
-              Ability: {pokeAbility ? capitalizedPokeAbility : "None"}
+              Ability: {`${capitalizedPokeAbility.join(", ")}`}
             </h3>
             <h3 className={styles.pokeName}>
               Forms: {pokeForms ? capitalizedPokeForms : "None"}
             </h3>
             <h3 className={styles.pokeName}>
-              Moves: {pokeMoves ? capitalizedPokeMoves : "None"}
+              Moves: {`${capitalizedPokeMoves.slice(0, 5).join(", ")} `}
             </h3>
             <h3 className={styles.pokeName}>Height: {pokeHeight / 10}m</h3>
             <h3 className={styles.pokeName}>Weight: {pokeWeight / 10}m</h3>
